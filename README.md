@@ -6,6 +6,8 @@ This plugin adds a menu item that allows you to format the current file using Sc
 After installing the plugin, go to Preferences -> Scalariform and choose the formatting options
 you would like to be pass to scalariform.
 
+When editing a Scala file, you will find "Format with Scalariform" option in the Code menu.
+
 FAQ
 ---
 
