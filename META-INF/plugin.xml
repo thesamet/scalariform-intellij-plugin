@@ -1,0 +1,46 @@
+<idea-plugin version="2">
+    <id>com.thesamet.intellij.ScariformFormat</id>
+    <name>Scalariform</name>
+    <version>0.1</version>
+    <vendor email="nadav@thesamet.com" url="http://www.thesamet.com">Nadav S. Samet</vendor>
+
+    <description><![CDATA[
+      Formats Scala sources using Scalariform.
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Initial version.
+    ]]>
+    </change-notes>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <application-components>
+        <!-- Add your application components here -->
+        <component>
+            <implementation-class>com.thesamet.intellij.ScalariformApplicationComponent</implementation-class>
+        </component>
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="ScalariformIdea.com.thesamet.intellij.ScalariformFormatAction" class="com.thesamet.intellij.ScalariformFormatAction"
+                text="Format with _Scalariform" description="Formats the current file with Scalariform">
+            <add-to-group group-id="CodeFormatGroup" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="meta alt S"/>
+        </action>
+    </actions>
+
+</idea-plugin>

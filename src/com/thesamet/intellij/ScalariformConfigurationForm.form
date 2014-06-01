@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.thesamet.intellij.ScalariformConfigurationForm">
+  <grid id="27dc6" binding="rootComponent" layout-manager="GridLayoutManager" row-count="21" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="559"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="4ce3b" class="javax.swing.JCheckBox" binding="alignParametersCheckBox" default-binding="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Align parameters"/>
+        </properties>
+      </component>
+      <vspacer id="81d89">
+        <constraints>
+          <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="62391" class="javax.swing.JCheckBox" binding="alignSingleLineCaseCheckBox" default-binding="true">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Align single line case statements"/>
+        </properties>
+      </component>
+      <component id="a69ac" class="javax.swing.JCheckBox" binding="compactControlReadabilityCheckBox" default-binding="true">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Compact control readability"/>
+        </properties>
+      </component>
+      <component id="80032" class="javax.swing.JCheckBox" binding="compactStringConcatenationCheckBox" default-binding="true">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Compact string concatenation"/>
+        </properties>
+      </component>
+      <component id="dda77" class="javax.swing.JCheckBox" binding="doubleIndentClassDeclarationCheckBox" default-binding="true">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Double indent class declaration"/>
+        </properties>
+      </component>
+      <component id="95e35" class="javax.swing.JCheckBox" binding="formatXMLCheckBox" default-binding="true">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Format XML"/>
+        </properties>
+      </component>
+      <component id="fcebe" class="javax.swing.JCheckBox" binding="indentPackageBlocksCheckBox" default-binding="true">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Indent package blocks"/>
+        </properties>
+      </component>
+      <component id="b2d94" class="javax.swing.JCheckBox" binding="indentWithTabsCheckBox" default-binding="true">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Indent with tabs"/>
+        </properties>
+      </component>
+      <component id="7bc6c" class="javax.swing.JCheckBox" binding="multilineScalaDocCommentsStartCheckBox" default-binding="true">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Multiline ScalaDoc comments start on first line"/>
+        </properties>
+      </component>
+      <component id="d61ff" class="javax.swing.JCheckBox" binding="preserveDanglingCloseParenthesisCheckBox" default-binding="true">
+        <constraints>
+          <grid row="12" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Preserve dangling close parenthesis"/>
+        </properties>
+      </component>
+      <component id="ca256" class="javax.swing.JCheckBox" binding="placeScalaDocAsterisksBeneathCheckBox" default-binding="true">
+        <constraints>
+          <grid row="13" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Place ScalaDoc asterisks beneath second asterisk"/>
+        </properties>
+      </component>
+      <component id="8b96c" class="javax.swing.JCheckBox" binding="preserveSpaceBeforeArgumentsCheckBox" default-binding="true">
+        <constraints>
+          <grid row="14" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Preserve space before arguments"/>
+        </properties>
+      </component>
+      <component id="49387" class="javax.swing.JCheckBox" binding="rewriteArrowSymbolsCheckBox" default-binding="true">
+        <constraints>
+          <grid row="15" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Rewrite arrow symbols"/>
+        </properties>
+      </component>
+      <component id="2f8da" class="javax.swing.JCheckBox" binding="spaceBeforeColonCheckBox" default-binding="true">
+        <constraints>
+          <grid row="16" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Space before colon"/>
+        </properties>
+      </component>
+      <component id="5c978" class="javax.swing.JCheckBox" binding="spaceInsideParenthesisCheckBox" default-binding="true">
+        <constraints>
+          <grid row="18" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Space inside parenthesis"/>
+        </properties>
+      </component>
+      <component id="47a5b" class="javax.swing.JCheckBox" binding="spacesWithinPatternBindersCheckBox" default-binding="true">
+        <constraints>
+          <grid row="19" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Spaces within pattern binders"/>
+        </properties>
+      </component>
+      <grid id="302a0" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="2ddbb" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="274" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="Indent spaces"/>
+            </properties>
+          </component>
+          <component id="f2c9a" class="javax.swing.JTextField" binding="indentSpaces">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+        </children>
+      </grid>
+      <grid id="78e27" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="5973f" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="274" height="16"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="Max arrow indent:"/>
+            </properties>
+          </component>
+          <component id="77458" class="javax.swing.JTextField" binding="maxArrowIndent">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value=""/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="78870" class="javax.swing.JCheckBox" binding="indentLocalDefsCheckBox" default-binding="true">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Indent local defs"/>
+        </properties>
+      </component>
+      <component id="1af6b" class="javax.swing.JCheckBox" binding="spaceInsideBracketsCheckBox" default-binding="true">
+        <constraints>
+          <grid row="17" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Space inside brackets"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
