@@ -32,7 +32,7 @@ public class ScalariformConfigurationForm {
         return rootComponent;
     }
 
-    public void setData(ScalariformApplicationComponent data) {
+    public void setData(ScalariformState data) {
         alignParametersCheckBox.setSelected(data.isAlignParameters());
         alignSingleLineCaseCheckBox.setSelected(data.isAlignSingleLineCase());
         compactControlReadabilityCheckBox.setSelected(data.isCompactControlReadability());
@@ -55,7 +55,7 @@ public class ScalariformConfigurationForm {
         spaceInsideBracketsCheckBox.setSelected(data.isSpaceInsideBrackets());
     }
 
-    public void getData(ScalariformApplicationComponent data) {
+    public void getData(ScalariformState data) {
         data.setAlignParameters(alignParametersCheckBox.isSelected());
         data.setAlignSingleLineCase(alignSingleLineCaseCheckBox.isSelected());
         data.setCompactControlReadability(compactControlReadabilityCheckBox.isSelected());
@@ -84,7 +84,7 @@ public class ScalariformConfigurationForm {
         data.setSpaceInsideBrackets(spaceInsideBracketsCheckBox.isSelected());
     }
 
-    public boolean isModified(ScalariformApplicationComponent data) {
+    public boolean isModified(ScalariformState data) {
         if (alignParametersCheckBox.isSelected() != data.isAlignParameters()) return true;
         if (alignSingleLineCaseCheckBox.isSelected() != data.isAlignSingleLineCase()) return true;
         if (compactControlReadabilityCheckBox.isSelected() != data.isCompactControlReadability()) return true;

@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>com.thesamet.intellij.ScariformFormat</id>
     <name>Scalariform</name>
-    <version>0.1</version>
+    <version>0.2</version>
     <vendor email="nadav@thesamet.com" url="http://www.thesamet.com">Nadav S. Samet</vendor>
 
     <description><![CDATA[
@@ -14,7 +14,7 @@
     </change-notes>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-    <idea-version since-build="131"/>
+    <idea-version since-build="145"/>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
          on how to target different products -->
@@ -33,6 +33,10 @@
         <!-- Add your project components here -->
     </project-components>
 
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.thesamet.intellij.ScalariformState"/>
+        <applicationConfigurable id="Scalariform" groupId="language" instance="com.thesamet.intellij.ScalariformApplicationComponent" />
+    </extensions>
 
     <actions>
         <!-- Add your actions here -->
