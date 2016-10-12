@@ -1,8 +1,10 @@
 package com.thesamet.intellij
 
-import com.intellij.openapi.actionSystem.{CommonDataKeys, AnActionEvent, AnAction}
+import com.intellij.openapi.actionSystem.{ AnAction, AnActionEvent, CommonDataKeys }
 import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.fileEditor.{FileDocumentManager, FileEditorManager}
+import com.intellij.openapi.components.ServiceManager
+import com.intellij.openapi.fileEditor.{ FileDocumentManager, FileEditorManager }
+
 import scalariform.formatter.preferences._
 import scalariform.formatter.preferences.AlignSingleLineCaseStatements.MaxArrowIndent
 import scalariform.formatter.ScalaFormatter
@@ -23,17 +25,17 @@ class ScalariformFormatAction extends AnAction {
     getCurrentFileDocument(event)
       .filter(_.isScala)
       .foreach {
-      fileDoc =>
-        val source = fileDoc.document.getText()
-        val formatted = ScalaFormatter.format(source, formattingPreferences = pref)
-        if (source != formatted) {
-          ApplicationManager.getApplication.runWriteAction(new Runnable {
-            override def run(): Unit = {
-              fileDoc.document.setText(formatted)
-            }
-          })
-        }
-    }
+        fileDoc =>
+          val source = fileDoc.document.getText()
+          val formatted = ScalaFormatter.format(source, formattingPreferences = pref)
+          if (source != formatted) {
+            ApplicationManager.getApplication.runWriteAction(new Runnable {
+              override def run(): Unit = {
+                fileDoc.document.setText(formatted)
+              }
+            })
+          }
+      }
   }
 
   private def getCurrentFileDocument(event: AnActionEvent): Option[FileDocument] = for {
@@ -44,8 +46,7 @@ class ScalariformFormatAction extends AnAction {
   } yield FileDocument(vfile, document)
 
   private def formattingPreferences: FormattingPreferences = {
-    val component: ScalariformApplicationComponent =
-      ApplicationManager.getApplication.getComponent(classOf[ScalariformApplicationComponent])
+    val component: ScalariformState = ServiceManager.getService(classOf[ScalariformState])
 
     FormattingPreferences.setPreference(RewriteArrowSymbols, component.isRewriteArrowSymbols)
       .setPreference(IndentSpaces, component.getIndentSpaces.toInt)

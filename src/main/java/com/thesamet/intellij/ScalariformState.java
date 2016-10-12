@@ -1,21 +1,15 @@
 package com.thesamet.intellij;
 
-import com.intellij.openapi.components.*;
-import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 import com.intellij.util.xmlb.XmlSerializerUtil;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import javax.swing.*;
 
 /**
- * Created by nadavsr on 6/1/14.
+ * Created by gil308 on 12/10/2016.
  */
-@State(name = "ScalariformSettings", storages = {@Storage(id = "other", file = StoragePathMacros.APP_CONFIG + "/other.xml"
-)})
-public class ScalariformApplicationComponent implements Configurable, ApplicationComponent, PersistentStateComponent<ScalariformApplicationComponent> {
+@State(name = "ScalariformSettings", storages = {@Storage("scalariform.xml")})
+public class ScalariformState implements PersistentStateComponent<ScalariformState> {
     private boolean alignParameters = false;
     private boolean alignSingleLineCase = false;
     private boolean compactControlReadability = false;
@@ -37,35 +31,11 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
     private boolean indentLocalDefs;
     private boolean spaceInsideBrackets;
 
-    public ScalariformApplicationComponent() {
-    }
-
-    public void initComponent() {
-        // TODO: insert component initialization logic here
-    }
-
-    public void disposeComponent() {
-        // TODO: insert component disposal logic here
-    }
-
-    @NotNull
-    public String getComponentName() {
-        return "com.thesamet.intellij.ScalariformApplicationComponent";
-    }
-
-    public boolean isAlignParameters() {
-        return alignParameters;
-    }
-
-    public void setAlignParameters(final boolean alignParameters) {
-        this.alignParameters = alignParameters;
-    }
-
     public boolean isAlignSingleLineCase() {
         return alignSingleLineCase;
     }
 
-    public void setAlignSingleLineCase(final boolean alignSingleLineCase) {
+    public void setAlignSingleLineCase(boolean alignSingleLineCase) {
         this.alignSingleLineCase = alignSingleLineCase;
     }
 
@@ -73,7 +43,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return compactControlReadability;
     }
 
-    public void setCompactControlReadability(final boolean compactControlReadability) {
+    public void setCompactControlReadability(boolean compactControlReadability) {
         this.compactControlReadability = compactControlReadability;
     }
 
@@ -81,7 +51,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return compactStringConcatenation;
     }
 
-    public void setCompactStringConcatenation(final boolean compactStringConcatenation) {
+    public void setCompactStringConcatenation(boolean compactStringConcatenation) {
         this.compactStringConcatenation = compactStringConcatenation;
     }
 
@@ -89,7 +59,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return doubleIndentClassDeclaration;
     }
 
-    public void setDoubleIndentClassDeclaration(final boolean doubleIndentClassDeclaration) {
+    public void setDoubleIndentClassDeclaration(boolean doubleIndentClassDeclaration) {
         this.doubleIndentClassDeclaration = doubleIndentClassDeclaration;
     }
 
@@ -97,7 +67,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return formatXML;
     }
 
-    public void setFormatXML(final boolean formatXML) {
+    public void setFormatXML(boolean formatXML) {
         this.formatXML = formatXML;
     }
 
@@ -105,7 +75,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return indentPackageBlocks;
     }
 
-    public void setIndentPackageBlocks(final boolean indentPackageBlocks) {
+    public void setIndentPackageBlocks(boolean indentPackageBlocks) {
         this.indentPackageBlocks = indentPackageBlocks;
     }
 
@@ -113,7 +83,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return indentWithTabs;
     }
 
-    public void setIndentWithTabs(final boolean indentWithTabs) {
+    public void setIndentWithTabs(boolean indentWithTabs) {
         this.indentWithTabs = indentWithTabs;
     }
 
@@ -121,7 +91,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return multilineScalaDocCommentsStartOnFirstLine;
     }
 
-    public void setMultilineScalaDocCommentsStartOnFirstLine(final boolean multilineScalaDocCommentsStartOnFirstLine) {
+    public void setMultilineScalaDocCommentsStartOnFirstLine(boolean multilineScalaDocCommentsStartOnFirstLine) {
         this.multilineScalaDocCommentsStartOnFirstLine = multilineScalaDocCommentsStartOnFirstLine;
     }
 
@@ -129,7 +99,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return preserveDanglineCloseParenthesis;
     }
 
-    public void setPreserveDanglineCloseParenthesis(final boolean preserveDanglineCloseParenthesis) {
+    public void setPreserveDanglineCloseParenthesis(boolean preserveDanglineCloseParenthesis) {
         this.preserveDanglineCloseParenthesis = preserveDanglineCloseParenthesis;
     }
 
@@ -137,7 +107,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return placeScalaDocAsteriskBeneathSecondAsterisk;
     }
 
-    public void setPlaceScalaDocAsteriskBeneathSecondAsterisk(final boolean placeScalaDocAsteriskBeneathSecondAsterisk) {
+    public void setPlaceScalaDocAsteriskBeneathSecondAsterisk(boolean placeScalaDocAsteriskBeneathSecondAsterisk) {
         this.placeScalaDocAsteriskBeneathSecondAsterisk = placeScalaDocAsteriskBeneathSecondAsterisk;
     }
 
@@ -145,7 +115,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return preserveSpaceBeforeArguments;
     }
 
-    public void setPreserveSpaceBeforeArguments(final boolean preserveSpaceBeforeArguments) {
+    public void setPreserveSpaceBeforeArguments(boolean preserveSpaceBeforeArguments) {
         this.preserveSpaceBeforeArguments = preserveSpaceBeforeArguments;
     }
 
@@ -153,7 +123,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return rewriteArrowSymbols;
     }
 
-    public void setRewriteArrowSymbols(final boolean rewriteArrowSymbols) {
+    public void setRewriteArrowSymbols(boolean rewriteArrowSymbols) {
         this.rewriteArrowSymbols = rewriteArrowSymbols;
     }
 
@@ -161,7 +131,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return spaceBeforeColon;
     }
 
-    public void setSpaceBeforeColon(final boolean spaceBeforeColon) {
+    public void setSpaceBeforeColon(boolean spaceBeforeColon) {
         this.spaceBeforeColon = spaceBeforeColon;
     }
 
@@ -169,7 +139,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return spaceInsideParenthesis;
     }
 
-    public void setSpaceInsideParenthesis(final boolean spaceInsideParenthesis) {
+    public void setSpaceInsideParenthesis(boolean spaceInsideParenthesis) {
         this.spaceInsideParenthesis = spaceInsideParenthesis;
     }
 
@@ -177,7 +147,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return spacesWithinPatternBinders;
     }
 
-    public void setSpacesWithinPatternBinders(final boolean spacesWithinPatternBinders) {
+    public void setSpacesWithinPatternBinders(boolean spacesWithinPatternBinders) {
         this.spacesWithinPatternBinders = spacesWithinPatternBinders;
     }
 
@@ -185,7 +155,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return alignSingleLineCaseStatementsMaxArrowIndent;
     }
 
-    public void setAlignSingleLineCaseStatementsMaxArrowIndent(final Integer alignSingleLineCaseStatementsMaxArrowIndent) {
+    public void setAlignSingleLineCaseStatementsMaxArrowIndent(Integer alignSingleLineCaseStatementsMaxArrowIndent) {
         this.alignSingleLineCaseStatementsMaxArrowIndent = alignSingleLineCaseStatementsMaxArrowIndent;
     }
 
@@ -193,71 +163,15 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return indentSpaces;
     }
 
-    public void setIndentSpaces(final Integer indentSpaces) {
+    public void setIndentSpaces(Integer indentSpaces) {
         this.indentSpaces = indentSpaces;
-    }
-
-    // Configurable
-    ScalariformConfigurationForm form = null;
-
-    @Nls
-    @Override
-    public String getDisplayName() {
-        return "Scalariform";
-    }
-
-    @Nullable
-    @Override
-    public String getHelpTopic() {
-        return null;
-    }
-
-    @Nullable
-    @Override
-    public JComponent createComponent() {
-        if (form == null) {
-            form = new ScalariformConfigurationForm();
-        }
-        return form.getRootComponent();
-    }
-
-    @Override
-    public boolean isModified() {
-        return (form != null) && form.isModified(this);
-    }
-
-    @Override
-    public void apply() throws ConfigurationException {
-        if (form != null) {
-            form.getData(this);
-        }
-    }
-
-    @Override
-    public void reset() {
-        if (form != null) {
-            form.setData(this);
-        }
-    }
-
-    @Override
-    public void disposeUIResources() {
-        form = null;
-    }
-
-    public void loadState(ScalariformApplicationComponent state) {
-        XmlSerializerUtil.copyBean(state, this);
-    }
-
-    public ScalariformApplicationComponent getState() {
-        return this;
     }
 
     public boolean isIndentLocalDefs() {
         return indentLocalDefs;
     }
 
-    public void setIndentLocalDefs(final boolean indentLocalDefs) {
+    public void setIndentLocalDefs(boolean indentLocalDefs) {
         this.indentLocalDefs = indentLocalDefs;
     }
 
@@ -265,7 +179,26 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
         return spaceInsideBrackets;
     }
 
-    public void setSpaceInsideBrackets(final boolean spaceInsideBrackets) {
+    public void setSpaceInsideBrackets(boolean spaceInsideBrackets) {
         this.spaceInsideBrackets = spaceInsideBrackets;
+    }
+
+    public boolean isAlignParameters() {
+
+        return alignParameters;
+    }
+
+    public void setAlignParameters(boolean alignParameters) {
+        this.alignParameters = alignParameters;
+    }
+
+    @Override
+    public void loadState(ScalariformState state) {
+        XmlSerializerUtil.copyBean(state, this);
+    }
+
+    @Override
+    public ScalariformState getState() {
+        return this;
     }
 }
