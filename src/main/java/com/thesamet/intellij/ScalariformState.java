@@ -19,7 +19,7 @@ public class ScalariformState implements PersistentStateComponent<ScalariformSta
     private boolean indentPackageBlocks = true;
     private boolean indentWithTabs = false;
     private boolean multilineScalaDocCommentsStartOnFirstLine = false;
-    private boolean preserveDanglineCloseParenthesis = false;
+    private JavaIntents preserveDanglineCloseParenthesis = JavaIntents.Preserve;
     private boolean placeScalaDocAsteriskBeneathSecondAsterisk = false;
     private boolean preserveSpaceBeforeArguments = false;
     private boolean rewriteArrowSymbols = false;
@@ -95,11 +95,11 @@ public class ScalariformState implements PersistentStateComponent<ScalariformSta
         this.multilineScalaDocCommentsStartOnFirstLine = multilineScalaDocCommentsStartOnFirstLine;
     }
 
-    public boolean isPreserveDanglineCloseParenthesis() {
+    public JavaIntents getPreserveDanglineCloseParenthesis() {
         return preserveDanglineCloseParenthesis;
     }
 
-    public void setPreserveDanglineCloseParenthesis(boolean preserveDanglineCloseParenthesis) {
+    public void setPreserveDanglineCloseParenthesis(JavaIntents preserveDanglineCloseParenthesis) {
         this.preserveDanglineCloseParenthesis = preserveDanglineCloseParenthesis;
     }
 

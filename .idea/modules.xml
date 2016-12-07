@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ScalariformIdea.iml" filepath="$PROJECT_DIR$/ScalariformIdea.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scalariform-intellij-plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/scalariform-intellij-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scalariform-intellij-plugin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/scalariform-intellij-plugin_main.iml" group="scalariform-intellij-plugin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scalariform-intellij-plugin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/scalariform-intellij-plugin_test.iml" group="scalariform-intellij-plugin" />
     </modules>
   </component>
 </project>
-

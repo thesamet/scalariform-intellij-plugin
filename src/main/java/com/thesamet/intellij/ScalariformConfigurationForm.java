@@ -15,18 +15,19 @@ public class ScalariformConfigurationForm {
     private JCheckBox indentPackageBlocksCheckBox;
     private JCheckBox indentWithTabsCheckBox;
     private JCheckBox multilineScalaDocCommentsStartCheckBox;
-    private JCheckBox preserveDanglingCloseParenthesisCheckBox;
     private JCheckBox placeScalaDocAsterisksBeneathCheckBox;
     private JCheckBox preserveSpaceBeforeArgumentsCheckBox;
     private JCheckBox rewriteArrowSymbolsCheckBox;
     private JCheckBox spaceBeforeColonCheckBox;
     private JCheckBox spaceInsideParenthesisCheckBox;
     private JCheckBox spacesWithinPatternBindersCheckBox;
-    private JPanel rootComponent;
     private JCheckBox indentLocalDefsCheckBox;
     private JCheckBox spaceInsideBracketsCheckBox;
+    private JPanel rootComponent;
     private JTextField indentSpaces;
     private JTextField maxArrowIndent;
+    private JLabel preserveDangelingCloseParensTitle;
+    private JComboBox<JavaIntents> preserveDanglingCloseParensComboBox;
 
     public JPanel getRootComponent() {
         return rootComponent;
@@ -42,7 +43,7 @@ public class ScalariformConfigurationForm {
         indentPackageBlocksCheckBox.setSelected(data.isIndentPackageBlocks());
         indentWithTabsCheckBox.setSelected(data.isIndentWithTabs());
         multilineScalaDocCommentsStartCheckBox.setSelected(data.isMultilineScalaDocCommentsStartOnFirstLine());
-        preserveDanglingCloseParenthesisCheckBox.setSelected(data.isPreserveDanglineCloseParenthesis());
+        preserveDanglingCloseParensComboBox.setSelectedItem(data.getPreserveDanglineCloseParenthesis());
         placeScalaDocAsterisksBeneathCheckBox.setSelected(data.isPlaceScalaDocAsteriskBeneathSecondAsterisk());
         preserveSpaceBeforeArgumentsCheckBox.setSelected(data.isPreserveSpaceBeforeArguments());
         rewriteArrowSymbolsCheckBox.setSelected(data.isRewriteArrowSymbols());
@@ -65,7 +66,7 @@ public class ScalariformConfigurationForm {
         data.setIndentPackageBlocks(indentPackageBlocksCheckBox.isSelected());
         data.setIndentWithTabs(indentWithTabsCheckBox.isSelected());
         data.setMultilineScalaDocCommentsStartOnFirstLine(multilineScalaDocCommentsStartCheckBox.isSelected());
-        data.setPreserveDanglineCloseParenthesis(preserveDanglingCloseParenthesisCheckBox.isSelected());
+        data.setPreserveDanglineCloseParenthesis((JavaIntents) preserveDanglingCloseParensComboBox.getSelectedItem());
         data.setPlaceScalaDocAsteriskBeneathSecondAsterisk(placeScalaDocAsterisksBeneathCheckBox.isSelected());
         data.setPreserveSpaceBeforeArguments(preserveSpaceBeforeArgumentsCheckBox.isSelected());
         data.setRewriteArrowSymbols(rewriteArrowSymbolsCheckBox.isSelected());
@@ -95,8 +96,9 @@ public class ScalariformConfigurationForm {
         if (indentWithTabsCheckBox.isSelected() != data.isIndentWithTabs()) return true;
         if (multilineScalaDocCommentsStartCheckBox.isSelected() != data.isMultilineScalaDocCommentsStartOnFirstLine())
             return true;
-        if (preserveDanglingCloseParenthesisCheckBox.isSelected() != data.isPreserveDanglineCloseParenthesis())
+        if( !preserveDanglingCloseParensComboBox.getSelectedItem().equals( data.getPreserveDanglineCloseParenthesis())){
             return true;
+        }
         if (placeScalaDocAsterisksBeneathCheckBox.isSelected() != data.isPlaceScalaDocAsteriskBeneathSecondAsterisk())
             return true;
         if (preserveSpaceBeforeArgumentsCheckBox.isSelected() != data.isPreserveSpaceBeforeArguments()) return true;
@@ -114,5 +116,10 @@ public class ScalariformConfigurationForm {
         if (indentLocalDefsCheckBox.isSelected() != data.isIndentLocalDefs()) return true;
         if (spaceInsideBracketsCheckBox.isSelected() != data.isSpaceInsideBrackets()) return true;
         return false;
+    }
+
+    private void createUIComponents() {
+        preserveDanglingCloseParensComboBox = new JComboBox<>(JavaIntents.values());
+        preserveDanglingCloseParensComboBox.setSelectedIndex(0);
     }
 }
