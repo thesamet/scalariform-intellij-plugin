@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>com.thesamet.intellij.ScariformFormat</id>
     <name>Scalariform</name>
-    <version>0.2</version>
+    <version>0.3</version>
     <vendor email="nadav@thesamet.com" url="http://www.thesamet.com">Nadav S. Samet</vendor>
 
     <description><![CDATA[
